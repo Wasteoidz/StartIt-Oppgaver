@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Outpuzzled</title>
+    <style>
+        div {
+            color: black;
+            background-color: lightcoral;
+            padding: 10px;
+            margin: 10px;
+            Border: solid darkblue 4px;
+            width: 30px;
+            height: 30px;
+            float: left;
+        }
+
+            div.fIL {
+                clear: left;
+            }
+    </style>
+</head>
+<body>
+    <div id="r1k1" onclick="trykk(this,'r2k1','r1k2','r1k2','r1k2')">5</div>
+    <div id="r1k2" onclick="trykk(this,'r1k1','r1k3','r2k2','r2k2')">6</div>
+    <div id="r1k3" onclick="trykk(this,'r1k2','r2k3','r2k3','r2k3')">1</div>
+
+    <div id="r2k1" class="fIL" onclick="trykk(this,'r2k2','r1k1','r3k1','r3k1')">3</div>
+    <div id="r2k2" onclick="trykk(this,'r2k1','r1k2','r2k3','r3k2')"></div>
+    <div id="r2k3" onclick="trykk(this,'r2k2','r1k3','r3k3','r3k3')">2</div>
+
+    <div id="r3k1" class="fIL" onclick="trykk(this,'r2k1','r3k2','r3k2','r3k2')">4</div>
+    <div id="r3k2" onclick="trykk(this,'r3k1','r2k2','r3k3','r3k3')">8</div>
+    <div id="r3k3" onclick="trykk(this,'r3k2','r2k3','r2k3','r2k3')">7</div>
+
+
+    <script>
+
+        function trykk(tagElement, alt1, alt2, alt3, alt4) {
+            if (document.getElementById(alt1).innerHTML == '') {
+                document.getElementById(alt1).innerHTML = tagElement.innerHTML;
+                tagElement.innerHTML = '';
+            }
+            else if (document.getElementById(alt2).innerHTML == '') {
+                document.getElementById(alt2).innerHTML = tagElement.innerHTML;
+                tagElement.innerHTML = '';
+            }   
+            else if (document.getElementById(alt3).innerHTML == '') {
+                document.getElementById(alt3).innerHTML = tagElement.innerHTML;
+                tagElement.innerHTML = '';
+            }       
+            else if (document.getElementById(alt4).innerHTML == '') {
+                document.getElementById(alt4).innerHTML = tagElement.innerHTML;
+                tagElement.innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
