@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>sliderfunksjon som viser høyde, bredde og areal.</p>
+    <input id="høyde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="2" />
+    <input id="bredde" type="range" min="1" max="1000" step="1" oninput="calculate()" value="2" />
+    <div id="resultat"></div>
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var høydeInput = document.getElementById('høyde');
+        var breddeInput = document.getElementById('bredde');
+
+
+        function calculate() {
+            var høyde = parseInt(høydeInput.value);
+            var bredde = parseInt(breddeInput.value);
+            var sum = høyde + bredde;
+            var høydeX = høyde * 2;
+            var breddeX = bredde * 2;
+            var areal = (2 * høyde) + (2 * bredde);
+
+            resultatDiv.innerHTML = '' +
+                høydeX + '+' + breddeX + '=' + areal + '<br />' +
+                høyde + '+' + bredde + '=' + sum + '<br />' +
+                'høyde' + '=' + høyde + '<br />' +
+                'bredde' + '=' + bredde;
+
+
+
+        }
+
+
+    </script>
+
+</body>
+</html>
+
+<!--Lag en slider for å velge bredde fra 1 til 1000 og en slider for å 
+    velge høyde fra 1 til 1000. Vis en div med valgt bredde og høyde - 
+    og legg inn tekst i diven som viser arealet (bredde*høyde) og 
+    omkretsen (2*bredde+2*høyde).-->
