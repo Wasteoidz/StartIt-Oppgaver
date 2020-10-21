@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="open()">
+    <p>Ferdighet 5 - Kode som kjøres når siden lastes vs kode i en funksjon</p>
+    <img onload="load()" id="img" src="https://images2.minutemediacdn.com/image/upload/c_crop,h_843,w_1500,x_0,y_10/f_auto,q_auto,w_1100/v1555172614/shape/mentalfloss/iStock-177369626_1.jpg" />
+    <br />
+    <button onclick="doClick()">Trykk her</button>
+    <div id="greier"></div>
+    <div id="greier2"></div>
+
+    Prøv også å reloade siden.
+
+    <script>
+        alert('Dette skjer når siden lastes');
+
+
+
+        function doClick() {
+            alert('Dette skjer i funksjonen doClick');
+        }
+
+        function load() {
+            document.getElementById('greier2').innerHTML = 'img' + new Date().toTimeString();
+            console.log(document.getElementById('greier').innerHTML = 'img' + new Date().toTimeString())
+        }
+
+        function open() {
+            document.getElementById('greier').innerHTML = 'body' + new Date().toTimeString();
+        }
+    </script>
+</body>
+</html>
