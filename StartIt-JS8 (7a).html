@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="resultat"></div>
+    <div id="resultatHtml"></div>
+
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var resultatHtmlDiv = document.getElementById('resultatHtml');
+        var borderChooser = document.getElementById('borderChooser')
+        var colorChooser = document.getElementById('colorChooser');
+        var heightRng = 100 + Math.floor(Math.random() * 100);
+        var widthRng = 100 + Math.floor(Math.random() * 100);
+        var radiusRng = 60 + Math.floor(Math.random() * 5);
+        var borderRng = 5 + Math.floor(Math.random() * 15);
+
+        
+
+        showDiv();
+
+        function showDiv() {
+            resultatDiv.innerHTML = '<div style="'
+                + 'background-color: ' + 'blue' + ';'
+                + 'border: ' + 'solid ' + borderRng + 'px;'
+                + 'width: ' + widthRng + 'px;'
+                + 'height: ' + heightRng + 'px;'
+                + 'border-radius: ' + radiusRng + 'px;'
+                + '">' + '</div>';
+            resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!--Lag en webside som viser en div med tilfeldig bredde, høyde og border-størrelse.
+    Vis i tillegg som tekst hvilke tilfeldige verdier som brukes.
+    -->
