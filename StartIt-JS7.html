@@ -20,16 +20,16 @@
         function calculate() {
             var høyde = parseInt(høydeInput.value);
             var bredde = parseInt(breddeInput.value);
-            var sum = høyde + bredde;
+            var areal = høyde * bredde;
             var høydeX = høyde * 2;
             var breddeX = bredde * 2;
-            var areal = (2 * høyde) + (2 * bredde);
+            var omkrets = (2 * høyde) + (2 * bredde);
 
             resultatDiv.innerHTML = '' +
-                høydeX + '+' + breddeX + '=' + areal + '<br />' +
-                høyde + '+' + bredde + '=' + sum + '<br />' +
+                høydeX + '+' + breddeX + '=' + omkrets + 'omkrets' + '<br />' +
+                høyde + '*' + bredde + '=' + areal + ' areal' + '<br />' +
                 'høyde' + '=' + høyde + '<br />' +
-                'bredde' + '=' + bredde;
+                'bredde' + '=' + bredde ;
 
 
 
