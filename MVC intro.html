@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div {
+            font-size: 300%;
+
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="app"></div>
+
+
+    <script>
+       //model//
+        var points = 0;
+        var pointsPerClick = 1;
+        var smileyIndex = 0;
+        var juksResultat = false;
+
+
+                //model//
+        function trykk() {
+            points += pointsPerClick;
+            smileyIndex = 1 - smileyIndex;
+            updateView();
+        }
+
+        function kjøpOppgradering() {
+            if (points < 10) return;
+            points -= 10;
+            pointsPerClick++;
+            updateView();
+        }
+
+        function juks() {
+            points = points * 5;
+            pointsPerClick = pointsPerClick * 5;
+            juksResultat = true;
+            updateView();
+        }
+
+
+        //view//
+        updateView();
+        function updateView() {
+            var smiley = smileyIndex == 0 ? '&#x1F638' : '&#x1F63A';  
+            if (juksResultat == false) {
+                document.getElementById('app').innerHTML = `
+                <div id="image" onclick="trykk()">${smiley}</div>
+                <div id="pointsInfo">${points}</div>
+                <button onclick="kjøpOppgradering()">Kjøp oppgradering (10 poeng)</button>
+                <button onclick="juks()">trykk her for fusk!</button>
+            `;
+            }
+            else {
+               document.getElementById('app').innerHTML = `
+                <div id="image" onclick="trykk()">${smiley}</div>
+                <div id="pointsInfo">${points}</div>
+                <p>Du har jukset! fy skamme seg.</p>
+                <button onclick="juks()">trykk her for fusk!</button>
+                `;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
