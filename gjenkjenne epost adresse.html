@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="text" id="epost" oninput="mailVerify()" />
+
+    <script>
+
+        function mailVerify() {
+            let brev = document.getElementById('epost').value;
+            let mail = brev.split('@');          
+
+            if (brev.includes("@") && !brev.includes(' ') && mail[0,1].includes('.')) {
+                return console.log(true);
+            } else {
+                
+               return console.log(false);
+            }
+        }
+    </script>
+</body>
+</html>
